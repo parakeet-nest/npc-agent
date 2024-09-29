@@ -1,0 +1,15 @@
+services:
+
+  python-environment:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    volumes:
+      - ../..:/workspaces:cached     
+    command: sleep infinity
+
+  download-nemotron-mini-local-data:
+    image: curlimages/curl:8.6.0
+    entrypoint: ["curl", "host.docker.internal:11434/api/pull", "-d", "{\"name\": \"nemotron-mini\"}"]
+
+

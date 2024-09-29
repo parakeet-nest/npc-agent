@@ -1,0 +1,19 @@
+{
+	"name": "npc agent",
+	"dockerComposeFile": "compose.yml",
+	"service": "python-environment",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"vallyscode.crayons",
+				"ms-azuretools.vscode-docker",
+				"ms-python.debugpy",
+				"ms-python.vscode-pylance"
+			]
+		}
+	},
+	// Run commands after the container is created.
+	"postCreateCommand": "pip3 install -r requirements.txt"
+}
